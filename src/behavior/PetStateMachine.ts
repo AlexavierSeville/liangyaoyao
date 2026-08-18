@@ -131,6 +131,10 @@ export class PetStateMachine {
     }
   }
 
+  public returnToIdle(): void {
+    this.enterIdle(true);
+  }
+
   public hoverEnter(): void {
     if (this.state !== "Idle") {
       return;

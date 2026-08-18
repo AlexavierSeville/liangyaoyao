@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { PixiPetRuntime } from "./animation/PixiPetRuntime";
 import { loadAnimationCatalog } from "./animation/loadAnimationCatalog";
 import { loadAnimationRegistry } from "./animation/loadAnimationRegistry";
+import { DevAnimationTestController } from "./behavior/DevAnimationTestController";
 import { LocalBehaviorScheduler } from "./behavior/LocalBehaviorScheduler";
 import { PetStateMachine } from "./behavior/PetStateMachine";
 import { loadBehaviorConfig } from "./behavior/loadBehaviorConfig";
@@ -28,6 +29,7 @@ function App() {
     let windowService: TauriWindowService | null = null;
     let pixiRuntime: PixiPetRuntime | null = null;
     let stateMachine: PetStateMachine | null = null;
+    let devAnimationTestController: DevAnimationTestController | null = null;
     let behaviorScheduler: LocalBehaviorScheduler | null = null;
     let removeAnimationCompleteListener: (() => void) | null = null;
     let removeDragMoveListener: (() => void) | null = null;
@@ -135,6 +137,10 @@ function App() {
         },
         animationRegistry,
       );
+      if (import.meta.env.DEV) {
+        devAnimationTestController = new DevAnimationTestController(stateMachine);
+        devAnimationTestController.start();
+      }
       removeAnimationCompleteListener = pixiRuntime.onAnimationComplete(
         (animationId) => stateMachine?.handleAnimationComplete(animationId),
       );
@@ -187,6 +193,7 @@ function App() {
       window.removeEventListener("pointerup", endDrag);
       window.removeEventListener("pointercancel", endDrag);
       behaviorScheduler?.stop();
+      devAnimationTestController?.dispose();
       removeAnimationCompleteListener?.();
       removeDragMoveListener?.();
       removeDragEndListener?.();
