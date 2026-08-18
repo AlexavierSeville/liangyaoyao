@@ -1,0 +1,153 @@
+{
+  "version": 1,
+  "defaultAnimation": "idle",
+  "animations": {
+    "idle": {
+      "id": "idle",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/idle_breathe.webp",
+      "frames": 8,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 6,
+      "loop": true,
+      "sheetRow": 0,
+      "sheetColumns": 8,
+      "startFrame": 0,
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "idle_breathe": {
+      "id": "idle_breathe",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/idle_breathe.webp",
+      "frames": 8,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 6,
+      "loop": true,
+      "sheetRow": 0,
+      "sheetColumns": 8,
+      "anchor": { "x": 0.5, "y": 1 }
+    },
+    "idle_blink": {
+      "id": "idle_blink",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/idle_blink.webp",
+      "frames": 4,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 8,
+      "loop": false,
+      "sheetRow": 0,
+      "sheetColumns": 4,
+      "anchor": { "x": 0.5, "y": 1 }
+    },
+    "walking-right": {
+      "id": "walking-right",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/liangyaoyao-v2.webp",
+      "frames": 8,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 8,
+      "loop": true,
+      "sheetRow": 1,
+      "sheetColumns": 8,
+      "anchor": { "x": 0.5, "y": 1 }
+    },
+    "walking-left": {
+      "id": "walking-left",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/liangyaoyao-v2.webp",
+      "frames": 8,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 8,
+      "loop": true,
+      "sheetRow": 2,
+      "sheetColumns": 8,
+      "anchor": { "x": 0.5, "y": 1 }
+    },
+    "walking-up": {
+      "id": "walking-up",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/liangyaoyao-v2.webp",
+      "frames": 6,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 8,
+      "loop": true,
+      "sheetRow": 7,
+      "sheetColumns": 8,
+      "anchor": { "x": 0.5, "y": 1 }
+    },
+    "walking-down": {
+      "id": "walking-down",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/liangyaoyao-v2.webp",
+      "frames": 6,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 8,
+      "loop": true,
+      "sheetRow": 7,
+      "sheetColumns": 8,
+      "anchor": { "x": 0.5, "y": 1 }
+    },
+    "hover-jump": {
+      "id": "hover-jump",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/liangyaoyao-v2.webp",
+      "frames": 5,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 6,
+      "loop": false,
+      "sheetRow": 4,
+      "sheetColumns": 8,
+      "anchor": { "x": 0.5, "y": 1 }
+    },
+    "waiting": {
+      "id": "waiting",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/liangyaoyao-v2.webp",
+      "frames": 6,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 5,
+      "loop": false,
+      "sheetRow": 6,
+      "sheetColumns": 8,
+      "anchor": { "x": 0.5, "y": 1 }
+    },
+    "review": {
+      "id": "review",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/liangyaoyao-v2.webp",
+      "frames": 6,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 5,
+      "loop": false,
+      "sheetRow": 8,
+      "sheetColumns": 8,
+      "anchor": { "x": 0.5, "y": 1 }
+    },
+    "wave": {
+      "id": "wave",
+      "sourceType": "spritesheet",
+      "file": "/assets/animations/liangyaoyao-v2.webp",
+      "frames": 4,
+      "frameWidth": 192,
+      "frameHeight": 208,
+      "fps": 6,
+      "loop": false,
+      "sheetRow": 3,
+      "sheetColumns": 8,
+      "anchor": { "x": 0.5, "y": 1 }
+    }
+  }
+}

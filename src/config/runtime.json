@@ -1,0 +1,8 @@
+{
+  "renderer": {
+    "maxFps": 60,
+    "minFps": 30,
+    "resolutionCap": 2,
+    "preference": "webgl"
+  }
+}

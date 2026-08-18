@@ -1,0 +1,15 @@
+{
+  "id": "liangyaoyao",
+  "name": "梁峣峣",
+  "description": "一只温柔可靠的灰白橙 Q 版企鹅桌宠。",
+  "canvas": {
+    "width": 220,
+    "height": 228
+  },
+  "sprite": {
+    "x": 110,
+    "y": 220,
+    "scale": 1
+  },
+  "defaultAnimation": "idle"
+}

@@ -1,0 +1,26 @@
+{
+  "directionThresholdPx": 4,
+  "directionSwitchThresholdPx": 18,
+  "animations": {
+    "idle": "idle",
+    "hoverJump": "hover-jump",
+    "walking": {
+      "up": "walking-up",
+      "down": "walking-down",
+      "left": "walking-left",
+      "right": "walking-right"
+    },
+    "microActions": ["waiting", "review", "wave"]
+  },
+  "microActions": {
+    "minDelayMs": 10000,
+    "maxDelayMs": 60000,
+    "avoidRepeat": true
+  },
+  "size": {
+    "minPercent": 10,
+    "maxPercent": 100,
+    "stepPercent": 10,
+    "defaultPercent": 100
+  }
+}
