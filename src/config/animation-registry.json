@@ -61,7 +61,7 @@
       "category": "Idle",
       "frameCount": 8,
       "loop": true,
-      "defaultFps": 6,
+      "defaultFps": 3,
       "trigger": "idle_random",
       "onComplete": "stay",
       "status": "active",
