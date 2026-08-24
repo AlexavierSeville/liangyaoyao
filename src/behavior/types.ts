@@ -23,6 +23,11 @@ export type PetAction =
   | "TypeKeyboard"
   | "TiltHead"
   | "PuffAngry"
+  | "HeadPat"
+  | "BellyTickled"
+  | "BellyDislike"
+  | "FlipperReact"
+  | "FeetReact"
   | "HoverJump"
   | "Dragged";
 

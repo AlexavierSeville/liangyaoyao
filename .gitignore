@@ -13,6 +13,10 @@ dist-ssr
 src-tauri/target
 *.local
 
+# Generated animation candidates and local runtime captures
+output/
+scripts/__pycache__/
+
 # Local analysis artifacts
 atlas-grid.jpg
 

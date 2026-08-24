@@ -361,6 +361,21 @@ export class PetStateMachine {
 
   private applyTransitionRule(rule: `transition_to:${string}`): void {
     const target = rule.slice("transition_to:".length);
+    const registryDefinition = this.registry.getById(target);
+    if (
+      registryDefinition?.status === "active" &&
+      registryDefinition.runtimeClipId
+    ) {
+      this.transition({
+        state: this.stateForDefinition(registryDefinition),
+        action: registryDefinition.action,
+        animationId: registryDefinition.id,
+        priority: registryDefinition.interruptPriority,
+        force: true,
+        rememberPrevious: false,
+      });
+      return;
+    }
     if (this.isPetState(target)) {
       this.transition({
         state: target,
@@ -400,6 +415,7 @@ export class PetStateMachine {
         return "Working";
       case "Life":
       case "Emote":
+      case "Touch":
         return "Emoting";
     }
   }

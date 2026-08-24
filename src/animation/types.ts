@@ -33,7 +33,8 @@ export type AnimationCategory =
   | "Life"
   | "Rest"
   | "Work"
-  | "Emote";
+  | "Emote"
+  | "Touch";
 
 export type AnimationTrigger =
   | "idle_random"
@@ -52,6 +53,8 @@ export type AnimationCompletionRule =
   | "none";
 
 export type AnimationStatus = "active" | "planned";
+
+export type AnimationInteractionPhase = "start" | "loop" | "end" | "reaction";
 
 export type AnimationDirection =
   | "Left"
@@ -74,6 +77,8 @@ export interface AnimationDefinition {
   interruptPriority: number;
   direction?: AnimationDirection;
   runtimeClipId?: string;
+  interactionGroup?: string;
+  phase?: AnimationInteractionPhase;
 }
 
 export interface AnimationRegistryDocument {

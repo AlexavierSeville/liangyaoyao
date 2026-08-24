@@ -5,6 +5,11 @@ const bindings: Readonly<Record<string, string>> = {
   "2": "idle_blink",
   "3": "walk_waddle_left",
   "4": "walk_waddle_right",
+  "5": "emote_tilt_head",
+  "6": "emote_puff_angry",
+  "7": "touch_head_pat",
+  "8": "touch_head_pat_bite",
+  "9": "touch_head_pat_push_away",
 };
 
 /** Development-only keyboard bridge for requesting registry animations. */

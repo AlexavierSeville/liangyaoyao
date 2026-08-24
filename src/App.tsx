@@ -4,6 +4,7 @@ import { loadAnimationCatalog } from "./animation/loadAnimationCatalog";
 import { loadAnimationRegistry } from "./animation/loadAnimationRegistry";
 import { DevAnimationTestController } from "./behavior/DevAnimationTestController";
 import { LocalBehaviorScheduler } from "./behavior/LocalBehaviorScheduler";
+import { PetInteractionController } from "./behavior/PetInteractionController";
 import { PetStateMachine } from "./behavior/PetStateMachine";
 import { loadBehaviorConfig } from "./behavior/loadBehaviorConfig";
 import type { PetDirection, PetState } from "./behavior/types";
@@ -30,6 +31,7 @@ function App() {
     let pixiRuntime: PixiPetRuntime | null = null;
     let stateMachine: PetStateMachine | null = null;
     let devAnimationTestController: DevAnimationTestController | null = null;
+    let petInteractionController: PetInteractionController | null = null;
     let behaviorScheduler: LocalBehaviorScheduler | null = null;
     let removeAnimationCompleteListener: (() => void) | null = null;
     let removeDragMoveListener: (() => void) | null = null;
@@ -50,11 +52,10 @@ function App() {
       stateMachine?.endDrag();
     };
 
-    const handlePointerDown = (event: PointerEvent) => {
-      if (event.button !== 0 || !windowService || !stateMachine) {
+    const beginNativeDrag = () => {
+      if (!windowService || !stateMachine) {
         return;
       }
-      event.preventDefault();
       windowService.beginDrag();
       stateMachine.beginDrag();
       void windowService.startNativeDrag().catch((error: unknown) => {
@@ -137,6 +138,14 @@ function App() {
         },
         animationRegistry,
       );
+      petInteractionController = new PetInteractionController(
+        stageElement,
+        windowService,
+        stateMachine,
+        window,
+        () => Date.now(),
+        beginNativeDrag,
+      );
       if (import.meta.env.DEV) {
         devAnimationTestController = new DevAnimationTestController(stateMachine);
         devAnimationTestController.start();
@@ -171,13 +180,13 @@ function App() {
         () => stateMachine?.tryIdleShortAction(),
       );
 
-      stageElement.addEventListener("pointerdown", handlePointerDown);
       stageElement.addEventListener("pointerenter", handlePointerEnter);
       stageElement.addEventListener("contextmenu", handleContextMenu);
       window.addEventListener("pointerup", endDrag);
       window.addEventListener("pointercancel", endDrag);
 
       stateMachine.start();
+      petInteractionController.start();
       behaviorScheduler.start();
     };
 
@@ -187,12 +196,12 @@ function App() {
 
     return () => {
       disposed = true;
-      stageElement.removeEventListener("pointerdown", handlePointerDown);
       stageElement.removeEventListener("pointerenter", handlePointerEnter);
       stageElement.removeEventListener("contextmenu", handleContextMenu);
       window.removeEventListener("pointerup", endDrag);
       window.removeEventListener("pointercancel", endDrag);
       behaviorScheduler?.stop();
+      petInteractionController?.dispose();
       devAnimationTestController?.dispose();
       removeAnimationCompleteListener?.();
       removeDragMoveListener?.();

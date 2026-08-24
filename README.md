@@ -30,6 +30,9 @@ them to active eight-frame breathing and four-frame blink actions.
 See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for directory ownership and
 the asset/runtime architecture.
 
+For the current feature set, animation workflow, runtime controls, and design
+constraints, see [PROJECT_DESCRIPTION.md](PROJECT_DESCRIPTION.md).
+
 ## Commands
 
 ```powershell

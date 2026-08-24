@@ -4,6 +4,7 @@ import type {
   AnimationCompletionRule,
   AnimationDefinition,
   AnimationDirection,
+  AnimationInteractionPhase,
   AnimationRegistryDocument,
   AnimationStatus,
   AnimationTrigger,
@@ -24,6 +25,11 @@ const actions = new Set<PetAction>([
   "TypeKeyboard",
   "TiltHead",
   "PuffAngry",
+  "HeadPat",
+  "BellyTickled",
+  "BellyDislike",
+  "FlipperReact",
+  "FeetReact",
   "HoverJump",
   "Dragged",
 ]);
@@ -34,6 +40,7 @@ const categories = new Set<AnimationCategory>([
   "Rest",
   "Work",
   "Emote",
+  "Touch",
 ]);
 const triggers = new Set<AnimationTrigger>([
   "idle_random",
@@ -51,6 +58,12 @@ const directions = new Set<AnimationDirection>([
   "Forward",
   "Backward",
   "None",
+]);
+const interactionPhases = new Set<AnimationInteractionPhase>([
+  "start",
+  "loop",
+  "end",
+  "reaction",
 ]);
 
 export class AnimationRegistry {
@@ -203,6 +216,19 @@ function validateDefinition(value: unknown, index: number): AnimationDefinition 
   ) {
     throw new Error(`Invalid runtimeClipId for animation: ${id}`);
   }
+  if (
+    value.interactionGroup !== undefined &&
+    (typeof value.interactionGroup !== "string" ||
+      value.interactionGroup.length === 0)
+  ) {
+    throw new Error(`Invalid interactionGroup for animation: ${id}`);
+  }
+  if (
+    value.phase !== undefined &&
+    !interactionPhases.has(value.phase as AnimationInteractionPhase)
+  ) {
+    throw new Error(`Invalid interaction phase for animation: ${id}`);
+  }
   if (status === "active" && !value.runtimeClipId) {
     throw new Error(`Active animation requires runtimeClipId: ${id}`);
   }
@@ -220,6 +246,8 @@ function validateDefinition(value: unknown, index: number): AnimationDefinition 
     interruptPriority: Number(value.interruptPriority),
     direction: value.direction as AnimationDirection | undefined,
     runtimeClipId: value.runtimeClipId as string | undefined,
+    interactionGroup: value.interactionGroup as string | undefined,
+    phase: value.phase as AnimationInteractionPhase | undefined,
   };
 }
 

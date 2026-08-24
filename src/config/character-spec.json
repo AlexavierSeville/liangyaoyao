@@ -1,0 +1,224 @@
+{
+  "specVersion": "1.0",
+  "characterId": "liangyaoyao_penguin",
+  "purpose": "Canonical character constraints for all future animation spritesheets.",
+  "measurementMethod": {
+    "alphaThreshold": 12,
+    "coordinateOrigin": "top-left",
+    "rightAndBottomBounds": "exclusive",
+    "sourcePriority": "stable_existing_assets_before_generated_actions"
+  },
+  "sourceAssets": [
+    "public/assets/animations/idle_breathe.webp",
+    "public/assets/animations/idle_blink.webp",
+    "public/assets/animations/liangyaoyao-v2.webp"
+  ],
+  "canvas": {
+    "widthPx": 192,
+    "heightPx": 208,
+    "anchor": {
+      "x": 0.5,
+      "y": 1.0,
+      "pixel": {
+        "x": 96,
+        "y": 208
+      }
+    },
+    "standardVisibleBoundsPx": {
+      "left": 21,
+      "top": 5,
+      "right": 170,
+      "bottom": 203,
+      "width": 149,
+      "height": 198
+    },
+    "standardVisibleBoundsNormalized": {
+      "left": 0.1094,
+      "top": 0.024,
+      "right": 0.8854,
+      "bottom": 0.976,
+      "width": 0.776,
+      "height": 0.952
+    },
+    "baseline": {
+      "feetLastOpaqueRowPx": 202,
+      "feetBaselineNormalizedY": 0.9712,
+      "bottomTransparentRows": 5,
+      "tolerancePx": 1
+    },
+    "safeMarginsPx": {
+      "left": 21,
+      "right": 22,
+      "top": 5,
+      "bottom": 5
+    }
+  },
+  "proportions": {
+    "overallVisibleHeightPx": 198,
+    "overallVisibleWidthPx": 149,
+    "overallAspectRatio": 0.7525,
+    "headSilhouetteApproxPx": {
+      "left": 22,
+      "top": 5,
+      "right": 169,
+      "bottom": 97,
+      "width": 147,
+      "height": 92,
+      "heightOfVisibleRatio": 0.465
+    },
+    "bodyAndBellyApproxPx": {
+      "bellyLeft": 51,
+      "bellyTop": 72,
+      "bellyRight": 139,
+      "bellyBottom": 189,
+      "bellyWidth": 88,
+      "bellyHeight": 117,
+      "bellyWidthOfCanvasRatio": 0.458,
+      "bellyHeightOfVisibleRatio": 0.591
+    },
+    "wingsApproxPx": {
+      "left": {
+        "left": 21,
+        "top": 91,
+        "right": 51,
+        "bottom": 171,
+        "length": 80
+      },
+      "right": {
+        "left": 139,
+        "top": 91,
+        "right": 170,
+        "bottom": 171,
+        "length": 80
+      }
+    },
+    "feetApproxPx": {
+      "left": {
+        "left": 32,
+        "top": 175,
+        "right": 80,
+        "bottom": 203,
+        "width": 48,
+        "height": 28,
+        "centerX": 56
+      },
+      "right": {
+        "left": 110,
+        "top": 175,
+        "right": 158,
+        "bottom": 203,
+        "width": 48,
+        "height": 28,
+        "centerX": 134
+      },
+      "centerSpacingPx": 78,
+      "gapBetweenInnerEdgesPx": 30
+    },
+    "faceLandmarksApproxPx": {
+      "leftEyeCenter": { "x": 70.5, "y": 55 },
+      "rightEyeCenter": { "x": 117, "y": 55 },
+      "eyeCenterSpacingPx": 46.5,
+      "beakBounds": { "left": 83, "top": 53, "right": 107, "bottom": 70 },
+      "beakCenter": { "x": 95, "y": 61.5 },
+      "eyesToBeakCenterDeltaY": 6.5
+    }
+  },
+  "visualIdentity": {
+    "bodyKeywords": [
+      "round",
+      "short and chubby",
+      "cute chibi penguin",
+      "front-facing upright stance",
+      "soft illustrated texture"
+    ],
+    "mustPreserve": [
+      "large round charcoal head and back",
+      "warm cream face and belly patch",
+      "small orange oval beak",
+      "short orange feet with the same spacing",
+      "short tapered flippers",
+      "wide head-to-body silhouette",
+      "stable front-facing facial landmark relationship"
+    ],
+    "palette": {
+      "bellyAndFaceCream": "#FDF2D1",
+      "bodyCharcoalApprox": "#635245",
+      "outlineApprox": "#2F2923",
+      "beakAndFeetOrangeApprox": "#EEA95A",
+      "eyesAndDetailsApprox": "#2B251F"
+    },
+    "lineAndSurface": [
+      "soft dark illustrated outline",
+      "subtle warm paper-like texture",
+      "no hard vector edges",
+      "no glossy 3D rendering"
+    ]
+  },
+  "referenceFrames": {
+    "frontStandard": {
+      "asset": "public/assets/animations/liangyaoyao-v2.webp",
+      "atlasRow": 0,
+      "atlasColumn": 0,
+      "alsoUsedAs": "idle_breathe frame 1"
+    },
+    "frontClosedEyes": {
+      "asset": "public/assets/animations/liangyaoyao-v2.webp",
+      "atlasRow": 0,
+      "atlasColumn": 3,
+      "alsoUsedAs": "idle_blink frames 2 and 3"
+    },
+    "rightWalkStandard": {
+      "asset": "public/assets/animations/liangyaoyao-v2.webp",
+      "atlasRow": 1,
+      "atlasColumn": 0,
+      "runtimeClip": "walking-right"
+    },
+    "leftWalkStandard": {
+      "asset": "public/assets/animations/liangyaoyao-v2.webp",
+      "atlasRow": 2,
+      "atlasColumn": 0,
+      "runtimeClip": "walking-left"
+    }
+  },
+  "animationConstraints": {
+    "bodyScaleRangeWithoutExplicitAction": {
+      "min": 0.97,
+      "max": 1.03
+    },
+    "bodyCenterTolerancePx": 3,
+    "headTopTolerancePx": 4,
+    "feetBaselineTolerancePx": 1,
+    "facialLandmarkTolerancePx": 4,
+    "generatedFramesMust": [
+      "keep the 192x208 canvas",
+      "keep the anchor at x=0.5,y=1",
+      "keep the body silhouette within the standard bounds unless the action explicitly requires an extending prop",
+      "keep feet on the same baseline",
+      "use the source frames above as visual references"
+    ],
+    "generatedFramesMustNot": [
+      "make the penguin shorter or taller by rescaling the body",
+      "change head-to-body ratio",
+      "move the belly contour or facial landmarks permanently",
+      "lengthen or reshape the flippers",
+      "change foot size, spacing, or orange color",
+      "use a new character design, 3D style, or unrelated lighting"
+    ]
+  },
+  "validation": {
+    "requiredPerFrame": [
+      "RGBA or alpha-preserving output",
+      "visible body height approximately 194-202 px",
+      "visible body width approximately 145-158 px",
+      "feet last opaque row 201-203",
+      "body center approximately x=96",
+      "head top approximately y=1-9"
+    ],
+    "rejectWhen": [
+      "the neutral frame is visibly shorter than the standard frame",
+      "the feet baseline jumps between frames",
+      "the belly or face proportions drift",
+      "the action relies on a different penguin character"
+    ]
+  }
+}

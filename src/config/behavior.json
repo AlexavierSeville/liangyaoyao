@@ -13,8 +13,8 @@
     "microActions": ["waiting", "review", "wave"]
   },
   "microActions": {
-    "minDelayMs": 10000,
-    "maxDelayMs": 60000,
+    "minDelayMs": 30000,
+    "maxDelayMs": 120000,
     "avoidRepeat": true
   },
   "size": {
