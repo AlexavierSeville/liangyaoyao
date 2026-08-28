@@ -15,7 +15,6 @@ DEFAULT_ASSETS = (
     ROOT / "public/assets/animations/touch_head_pat_start.webp",
     ROOT / "public/assets/animations/touch_head_pat_loop.webp",
     ROOT / "public/assets/animations/touch_head_pat_end.webp",
-    ROOT / "public/assets/animations/touch_head_pat_bite.webp",
     ROOT / "public/assets/animations/touch_head_pat_push_away.webp",
 )
 
@@ -223,9 +222,9 @@ def main() -> None:
             print(f"FAIL missing asset: {asset}")
             passed = False
             continue
-        is_jump_bite = asset.name == "touch_head_pat_bite.webp"
-        allow_vertical_motion = args.allow_vertical_motion or is_jump_bite
-        dynamic_frames = set(range(2, 9)) if is_jump_bite else None
+        is_jump_nip = asset.name == "touch_head_pat_nip.webp"
+        allow_vertical_motion = args.allow_vertical_motion or is_jump_nip
+        dynamic_frames = set(range(2, 12)) if is_jump_nip else None
         passed = validate(
             asset,
             args.spec,

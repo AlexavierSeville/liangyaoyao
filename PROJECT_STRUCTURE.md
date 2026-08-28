@@ -31,15 +31,11 @@ Generated directories are intentionally excluded from Git:
 
 ```text
 src/
-|-- ai/          Reserved AI-facing type contracts; no AI runtime yet
 |-- animation/   Animation catalog/registry loading and Pixi playback
 |-- behavior/    Scheduler, pet state machine, and behavior types
 |-- character/   Character and renderer configuration loaders/types
 |-- config/      JSON runtime configuration and animation metadata
-|-- emotion/     Reserved emotion type contracts
-|-- outfit/      Reserved outfit type contracts
 |-- platform/    Frontend bridge to Tauri window and native commands
-|-- plugin/      Reserved plugin type contracts
 |-- App.tsx      Application composition and input/event forwarding
 |-- App.css      Desktop-pet window and stage styling
 `-- main.tsx     React entry point

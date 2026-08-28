@@ -6,10 +6,7 @@ const DRAG_THRESHOLD_PX = 5;
 const MULTI_CLICK_WINDOW_MS = 2000;
 const LONG_HOLD_MIN_DELAY_MS = 9000;
 const LONG_HOLD_MAX_DELAY_MS = 13000;
-const LONG_HOLD_REACTIONS = [
-  "touch_head_pat_bite",
-  "touch_head_pat_push_away",
-] as const;
+const LONG_HOLD_REACTIONS = ["touch_head_pat_push_away"] as const;
 
 interface PointerSession {
   pointerId: number;

@@ -124,19 +124,6 @@
       "sheetColumns": 6,
       "anchor": { "x": 0.5, "y": 1 }
     },
-    "touch_head_pat_bite": {
-      "id": "touch_head_pat_bite",
-      "sourceType": "spritesheet",
-      "file": "/assets/animations/touch_head_pat_bite.webp",
-      "frames": 16,
-      "frameWidth": 192,
-      "frameHeight": 208,
-      "fps": 5,
-      "loop": false,
-      "sheetRow": 0,
-      "sheetColumns": 16,
-      "anchor": { "x": 0.5, "y": 1 }
-    },
     "touch_head_pat_push_away": {
       "id": "touch_head_pat_push_away",
       "sourceType": "spritesheet",

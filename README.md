@@ -11,7 +11,6 @@ and PixiJS.
 - reusable animation player with frame count, frame size, FPS, loop control,
   and completion listeners
 - registry-driven breathing Idle and random blink behavior
-- contracts reserved for behavior, emotion, outfit, AI intent, and plugins
 
 AI, dialogue, memory, plugins, outfit logic, databases, weather, Git, and IDE
 integration are intentionally not implemented in V0.1.
@@ -19,9 +18,9 @@ integration are intentionally not implemented in V0.1.
 ## Asset provenance
 
 `public/assets/animations/liangyaoyao-v2.webp` is an unchanged copy of the
-validated legacy asset at:
+validated legacy asset archived at:
 
-`E:\pet\old_assets\liangyaoyao-lively-v2\package\spritesheet.webp`
+`E:\pet\origin\authoritative\liangyaoyao-lively-v2-package.webp`
 
 Dedicated `idle_breathe.webp` and `idle_blink.webp` sprite sheets are derived
 from the existing atlas without overwriting it. The animation registry maps
@@ -30,8 +29,8 @@ them to active eight-frame breathing and four-frame blink actions.
 See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for directory ownership and
 the asset/runtime architecture.
 
-For the current feature set, animation workflow, runtime controls, and design
-constraints, see [PROJECT_DESCRIPTION.md](PROJECT_DESCRIPTION.md).
+For the character identity reference, see
+[docs/character-bible.md](docs/character-bible.md).
 
 ## Commands
 

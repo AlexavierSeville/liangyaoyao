@@ -265,22 +265,6 @@
       "phase": "end"
     },
     {
-      "id": "touch_head_pat_bite",
-      "action": "HeadPat",
-      "category": "Touch",
-      "frameCount": 16,
-      "loop": false,
-      "defaultFps": 5,
-      "trigger": "user_click",
-      "onComplete": "return_idle",
-      "status": "active",
-      "interruptPriority": 60,
-      "direction": "None",
-      "runtimeClipId": "touch_head_pat_bite",
-      "interactionGroup": "head_pat",
-      "phase": "reaction"
-    },
-    {
       "id": "touch_head_pat_push_away",
       "action": "HeadPat",
       "category": "Touch",
@@ -293,6 +277,21 @@
       "interruptPriority": 60,
       "direction": "None",
       "runtimeClipId": "touch_head_pat_push_away",
+      "interactionGroup": "head_pat",
+      "phase": "reaction"
+    },
+    {
+      "id": "touch_head_pat_nip",
+      "action": "HeadPat",
+      "category": "Touch",
+      "frameCount": 16,
+      "loop": false,
+      "defaultFps": 5,
+      "trigger": "user_click",
+      "onComplete": "return_idle",
+      "status": "planned",
+      "interruptPriority": 65,
+      "direction": "None",
       "interactionGroup": "head_pat",
       "phase": "reaction"
     },

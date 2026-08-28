@@ -1,7 +1,12 @@
 {
   "id": "liangyaoyao",
   "name": "梁峣峣",
-  "description": "一只温柔可靠的灰白橙 Q 版企鹅桌宠。",
+  "description": "以权威 8×11 图集为唯一标准的圆润灰褐、奶油脸腹、橙喙橙脚 Q 版企鹅；正面宽而对称，左右侧身保持同一体量，背面由连续深灰褐圆背主导，视角变化通过头部、喙、脸腹边界、翅膀遮挡和脚部错位共同完成。",
+  "authoritativeReference": "public/assets/animations/liangyaoyao-v2.webp",
+  "personaReferenceTemplates": [
+    "docs/references/liangyaoyao-persona-template-02.png",
+    "docs/references/liangyaoyao-persona-template-03.png"
+  ],
   "canvas": {
     "width": 220,
     "height": 228

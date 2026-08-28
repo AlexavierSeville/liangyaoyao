@@ -1,17 +1,30 @@
 {
   "specVersion": "1.0",
   "characterId": "liangyaoyao_penguin",
-  "purpose": "Canonical character constraints for all future animation spritesheets.",
+  "purpose": "Canonical character constraints for all future animation spritesheets; the user's 8x11 atlas controls geometry and direction order, while two approved persona templates supplement appearance detail.",
   "measurementMethod": {
     "alphaThreshold": 12,
     "coordinateOrigin": "top-left",
     "rightAndBottomBounds": "exclusive",
-    "sourcePriority": "stable_existing_assets_before_generated_actions"
+    "sourcePriority": "user_authoritative_atlas_only",
+    "authorityNote": "The user's first supplied 1536x2288 atlas is pixel-identical to public/assets/animations/liangyaoyao-v2.webp and controls frame geometry, body proportions, and direction order. Persona templates 02 and 03 supplement appearance detail only; generated action assets never redefine identity."
   },
   "sourceAssets": [
-    "public/assets/animations/idle_breathe.webp",
-    "public/assets/animations/idle_blink.webp",
     "public/assets/animations/liangyaoyao-v2.webp"
+  ],
+  "referenceTemplates": [
+    {
+      "id": "persona_template_02",
+      "asset": "docs/references/liangyaoyao-persona-template-02.png",
+      "authority": "supporting",
+      "roles": ["front", "three-quarter", "screen-right profile", "facial expressions", "surface texture"]
+    },
+    {
+      "id": "persona_template_03",
+      "asset": "docs/references/liangyaoyao-persona-template-03.png",
+      "authority": "supporting",
+      "roles": ["front", "three-quarter", "screen-right profile", "beak-eye relationship", "wing volume", "surface texture"]
+    }
   ],
   "canvas": {
     "widthPx": 192,
@@ -158,14 +171,12 @@
     "frontStandard": {
       "asset": "public/assets/animations/liangyaoyao-v2.webp",
       "atlasRow": 0,
-      "atlasColumn": 0,
-      "alsoUsedAs": "idle_breathe frame 1"
+      "atlasColumn": 0
     },
     "frontClosedEyes": {
       "asset": "public/assets/animations/liangyaoyao-v2.webp",
       "atlasRow": 0,
-      "atlasColumn": 3,
-      "alsoUsedAs": "idle_blink frames 2 and 3"
+      "atlasColumn": 3
     },
     "rightWalkStandard": {
       "asset": "public/assets/animations/liangyaoyao-v2.webp",
@@ -178,7 +189,41 @@
       "atlasRow": 2,
       "atlasColumn": 0,
       "runtimeClip": "walking-left"
+    },
+    "rightProfile": {
+      "asset": "public/assets/animations/liangyaoyao-v2.webp",
+      "atlasRow": 1,
+      "atlasColumn": 0,
+      "direction": "screen-right"
+    },
+    "leftProfile": {
+      "asset": "public/assets/animations/liangyaoyao-v2.webp",
+      "atlasRow": 2,
+      "atlasColumn": 0,
+      "direction": "screen-left"
+    },
+    "backView": {
+      "asset": "public/assets/animations/liangyaoyao-v2.webp",
+      "atlasRow": 9,
+      "atlasColumn": 0,
+      "direction": "back/up-facing"
+    },
+    "directionRows": {
+      "asset": "public/assets/animations/liangyaoyao-v2.webp",
+      "row9Degrees": [0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5],
+      "row10Degrees": [180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5]
     }
+  },
+  "viewMechanics": {
+    "front": "Symmetric round head, both eyes visible, centered small oval beak, wide cream belly, two short wings and two separated orange feet.",
+    "screenRight": "Beak points right, near eye remains visible, far eye recedes, cream chest narrows toward the right, dark back forms the left contour.",
+    "screenLeft": "Mirror-equivalent of screenRight: beak points left, near eye remains visible, cream chest narrows toward the left, dark back forms the right contour.",
+    "back": "Dark rounded back dominates, cream belly and facial features are hidden or nearly hidden, wings remain connected to the back and feet remain orange.",
+    "continuity": [
+      "Use head turn, beak position, cream-belly width, dark-back exposure, eye visibility, wing overlap, and foot foreshortening together.",
+      "Never fake a view change with pupil-only motion or whole-sprite rotation.",
+      "Keep the same body volume, baseline, outline, texture, palette relationship, and foot size through all directions."
+    ]
   },
   "animationConstraints": {
     "bodyScaleRangeWithoutExplicitAction": {
