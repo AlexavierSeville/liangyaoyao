@@ -300,7 +300,7 @@
       "id": "touch_belly_tickled",
       "action": "BellyTickled",
       "category": "Touch",
-      "frameCount": 1,
+      "frameCount": 12,
       "loop": false,
       "defaultFps": 8,
       "trigger": "user_click",
