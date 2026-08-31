@@ -1,12 +1,14 @@
 import type { PointerDelta, TauriWindowService } from "../platform/TauriWindowService";
 import type { PetStateMachine } from "./PetStateMachine";
+import {
+  selectLongHoldReaction,
+} from "./longHoldReactions";
 import hitZones from "../config/pet-hit-zones.json";
 
 const DRAG_THRESHOLD_PX = 5;
 const MULTI_CLICK_WINDOW_MS = 2000;
 const LONG_HOLD_MIN_DELAY_MS = 9000;
 const LONG_HOLD_MAX_DELAY_MS = 13000;
-const LONG_HOLD_REACTIONS = ["touch_head_pat_push_away"] as const;
 
 interface PointerSession {
   pointerId: number;
@@ -248,11 +250,7 @@ export class PetInteractionController {
       return;
     }
     pointer.longHoldTimer = null;
-    const index = Math.min(
-      LONG_HOLD_REACTIONS.length - 1,
-      Math.floor(this.random() * LONG_HOLD_REACTIONS.length),
-    );
-    const registryId = LONG_HOLD_REACTIONS[index];
+    const registryId = selectLongHoldReaction(this.random());
     if (this.requestTouch(registryId)) {
       pointer.holdReactionTriggered = true;
       console.debug(`[interaction] triggered long head hold reaction: ${registryId}`);

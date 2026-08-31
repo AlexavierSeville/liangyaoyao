@@ -86,8 +86,8 @@
 | `touch_head_pat_start` | `touch_head_pat_start.webp` | 6 / 6 | 5 | 否 | 摸头开始 |
 | `touch_head_pat_loop` | `touch_head_pat_loop.webp` | 12 / 12 | 3 | 是 | 摸头循环 |
 | `touch_head_pat_end` | `touch_head_pat_end.webp` | 6 / 6 | 5 | 否 | 摸头结束 |
-| `touch_head_pat_nip` | `touch_head_pat_nip.webp` | 16 / 16 | 5 | 否 | 摸头后跳起轻咬指尖，重新设计中 |
-| `touch_head_pat_push_away` | `touch_head_pat_push_away.webp` | 8 / 8 | 4 | 否 | 推开反应 |
+| `touch_head_pat_nip` | `touch_head_pat_nip.webp` | 20 / 20 | 5 | 否 | 摸头后跳起轻咬指尖 |
+| `touch_head_pat_push_away` | `touch_head_pat_push_away.webp` | 20 / 20 | 5 | 否 | 推开反应 |
 | `walking-right` | `liangyaoyao-v2.webp` row 1 | 8 | 6 | 是 | 向右走 |
 | `walking-left` | `liangyaoyao-v2.webp` row 2 | 8 | 6 | 是 | 向左走 |
 | `walking-up/down` | `liangyaoyao-v2.webp` row 7 | 6 | 6 | 是 | 纵向移动兼容片段 |

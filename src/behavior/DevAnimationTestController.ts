@@ -9,6 +9,7 @@ const bindings: Readonly<Record<string, string>> = {
   "6": "emote_puff_angry",
   "7": "touch_head_pat",
   "8": "touch_head_pat_push_away",
+  "9": "touch_head_pat_nip",
 };
 
 /** Development-only keyboard bridge for requesting registry animations. */
