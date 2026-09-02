@@ -89,10 +89,7 @@ mod pet_drag {
             return Ok(());
         }
 
-        let hwnd = window
-            .hwnd()
-            .map_err(|error| error.to_string())?
-            .0 as isize;
+        let hwnd = window.hwnd().map_err(|error| error.to_string())?.0 as isize;
         let mut start_cursor = Point::default();
         let mut start_window = Rect::default();
         unsafe {
@@ -110,9 +107,7 @@ mod pet_drag {
 
         thread::spawn(move || {
             unsafe {
-                set_thread_dpi_awareness_context(
-                    DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2,
-                );
+                set_thread_dpi_awareness_context(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);
             }
             let mut last_cursor = start_cursor;
             while token.load(Ordering::Relaxed) && left_button_is_pressed() {
@@ -134,10 +129,7 @@ mod pet_drag {
                             y,
                             0,
                             0,
-                            SWP_NOSIZE
-                                | SWP_NOZORDER
-                                | SWP_NOACTIVATE
-                                | SWP_ASYNCWINDOWPOS,
+                            SWP_NOSIZE | SWP_NOZORDER | SWP_NOACTIVATE | SWP_ASYNCWINDOWPOS,
                         );
                     }
                     let _ = window.emit("pet-drag-move", DragDelta { dx, dy });
@@ -172,22 +164,28 @@ mod pet_drag {
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    let builder = tauri::Builder::default().setup(|app| {
-        app_tray::setup(app)?;
-        Ok(())
-    });
+    let builder = tauri::Builder::default()
+        .plugin(tauri_plugin_autostart::Builder::new().build())
+        .setup(|app| {
+            app_tray::setup(app)?;
+            Ok(())
+        });
 
     #[cfg(windows)]
     let builder = builder
         .manage(pet_drag::DragController::default())
         .invoke_handler(tauri::generate_handler![
             app_control::quit_app,
+            app_control::open_settings,
             pet_drag::start_pet_drag,
             pet_drag::stop_pet_drag
         ]);
 
     #[cfg(not(windows))]
-    let builder = builder.invoke_handler(tauri::generate_handler![app_control::quit_app]);
+    let builder = builder.invoke_handler(tauri::generate_handler![
+        app_control::quit_app,
+        app_control::open_settings
+    ]);
 
     builder
         .run(tauri::generate_context!())

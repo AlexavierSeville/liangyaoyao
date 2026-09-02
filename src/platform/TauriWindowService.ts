@@ -1,6 +1,6 @@
 import { LogicalSize } from "@tauri-apps/api/dpi";
 import { invoke } from "@tauri-apps/api/core";
-import { listen } from "@tauri-apps/api/event";
+import { emit, listen } from "@tauri-apps/api/event";
 import {
   Menu,
   MenuItem,
@@ -29,8 +29,11 @@ export class TauriWindowService {
   private readonly windowHandle: ReturnType<typeof getCurrentWindow> | null;
   private readonly dragMoveListeners = new Set<(delta: PointerDelta) => void>();
   private readonly dragEndListeners = new Set<() => void>();
+  private readonly sizeChangeListeners = new Set<(percent: number) => void>();
   private unlistenDragMove: (() => void) | null = null;
   private unlistenDragEnd: (() => void) | null = null;
+  private unlistenSizeChange: (() => void) | null = null;
+  private unlistenSizeRequest: (() => void) | null = null;
   private dragging = false;
   private disposed = false;
 
@@ -52,7 +55,7 @@ export class TauriWindowService {
     const requestedPercent = Number.isFinite(storedPercent)
       ? storedPercent
       : config.defaultPercent;
-    return this.clampPercent(requestedPercent, config);
+    return this.normalizePercent(requestedPercent, config);
   }
 
   public async initialize(): Promise<void> {
@@ -77,13 +80,32 @@ export class TauriWindowService {
           listener();
         }
       });
+      const unlistenSizeChange = await listen<number>(
+        "pet-size-change",
+        ({ payload }) => {
+          for (const listener of this.sizeChangeListeners) {
+            listener(payload);
+          }
+        },
+      );
+      const unlistenSizeRequest = await listen("pet-size-request", () => {
+        const stored = window.localStorage.getItem(SIZE_STORAGE_KEY);
+        const percent = stored === null ? Number.NaN : Number(stored);
+        if (Number.isFinite(percent)) {
+          void emit("pet-size-snapshot", percent);
+        }
+      });
 
       if (this.disposed) {
         unlistenDragMove();
         unlistenDragEnd();
+        unlistenSizeChange();
+        unlistenSizeRequest();
       } else {
         this.unlistenDragMove = unlistenDragMove;
         this.unlistenDragEnd = unlistenDragEnd;
+        this.unlistenSizeChange = unlistenSizeChange;
+        this.unlistenSizeRequest = unlistenSizeRequest;
       }
     } catch {
       // Browser preview has no Tauri event bridge.
@@ -98,6 +120,11 @@ export class TauriWindowService {
   public onDragEnd(listener: () => void): () => void {
     this.dragEndListeners.add(listener);
     return () => this.dragEndListeners.delete(listener);
+  }
+
+  public onSizeChange(listener: (percent: number) => void): () => void {
+    this.sizeChangeListeners.add(listener);
+    return () => this.sizeChangeListeners.delete(listener);
   }
 
   public beginDrag(): void {
@@ -122,7 +149,7 @@ export class TauriWindowService {
     baseWidth: number,
     baseHeight: number,
   ): Promise<AppliedWindowSize> {
-    const percent = this.clampPercent(requestedPercent, config);
+    const percent = this.normalizePercent(requestedPercent, config);
     const scale = percent / 100;
     const width = Math.round(baseWidth * scale);
     const height = Math.round(baseHeight * scale);
@@ -152,11 +179,20 @@ export class TauriWindowService {
         });
       }),
     );
-    const [sizeMenu, separator, quitItem] = await Promise.all([
+    const [sizeMenu, settingsItem, separator, quitItem] = await Promise.all([
       Submenu.new({
         id: "size-menu",
         text: "调整大小",
         items: sizeItems,
+      }),
+      MenuItem.new({
+        id: "pet-menu-settings",
+        text: "控制面板",
+        action: () => {
+          void invoke("open_settings").catch((error: unknown) => {
+            console.error("Unable to open pet settings", error);
+          });
+        },
       }),
       PredefinedMenuItem.new({ item: "Separator" }),
       MenuItem.new({
@@ -169,7 +205,9 @@ export class TauriWindowService {
         },
       }),
     ]);
-    const menu = await Menu.new({ items: [sizeMenu, separator, quitItem] });
+    const menu = await Menu.new({
+      items: [sizeMenu, settingsItem, separator, quitItem],
+    });
     await menu.popup(undefined, this.windowHandle);
   }
 
@@ -178,16 +216,36 @@ export class TauriWindowService {
     this.endDrag();
     this.dragMoveListeners.clear();
     this.dragEndListeners.clear();
+    this.sizeChangeListeners.clear();
     this.unlistenDragMove?.();
     this.unlistenDragEnd?.();
+    this.unlistenSizeChange?.();
+    this.unlistenSizeRequest?.();
     this.unlistenDragMove = null;
     this.unlistenDragEnd = null;
+    this.unlistenSizeChange = null;
+    this.unlistenSizeRequest = null;
   }
 
   private clampPercent(
     percent: number,
     config: BehaviorConfig["size"],
   ): number {
+    if (!Number.isFinite(percent)) {
+      return config.defaultPercent;
+    }
     return Math.min(config.maxPercent, Math.max(config.minPercent, percent));
+  }
+
+  private normalizePercent(
+    percent: number,
+    config: BehaviorConfig["size"],
+  ): number {
+    const clamped = this.clampPercent(percent, config);
+    const step = Math.max(1, config.stepPercent);
+    const stepped =
+      Math.round((clamped - config.minPercent) / step) * step +
+      config.minPercent;
+    return Math.min(config.maxPercent, Math.max(config.minPercent, stepped));
   }
 }

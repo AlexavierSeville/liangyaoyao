@@ -19,7 +19,7 @@
   },
   "size": {
     "minPercent": 10,
-    "maxPercent": 100,
+    "maxPercent": 120,
     "stepPercent": 10,
     "defaultPercent": 100
   }

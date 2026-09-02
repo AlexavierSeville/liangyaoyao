@@ -37,7 +37,9 @@ src/
 |-- config/      JSON runtime configuration and animation metadata
 |-- platform/    Frontend bridge to Tauri window and native commands
 |-- App.tsx      Application composition and input/event forwarding
+|-- SettingsPanel.tsx  Standalone settings window for autostart and size
 |-- App.css      Desktop-pet window and stage styling
+|-- SettingsPanel.css  Settings-window-only styling
 `-- main.tsx     React entry point
 ```
 
@@ -71,7 +73,7 @@ src-tauri/
 |-- capabilities/        Tauri permission configuration
 |-- icons/               Application and installer icons
 |-- src/
-|   |-- app_control.rs   Application exit command
+|   |-- app_control.rs   Application exit and settings-window commands
 |   |-- app_tray.rs      System tray setup and menu handling
 |   |-- lib.rs           Tauri builder, window/menu commands, native drag
 |   `-- main.rs          Native executable entry point

@@ -1,8 +1,12 @@
 {
+  "animationTestKeys": {
+    "enabled": true
+  },
   "renderer": {
     "maxFps": 60,
     "minFps": 30,
     "resolutionCap": 2,
+    "roundPixels": true,
     "preference": "webgl"
   }
 }

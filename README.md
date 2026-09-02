@@ -41,4 +41,14 @@ npm.cmd run build
 npm.cmd run tauri dev
 ```
 
+Create the Windows desktop executable and NSIS installer:
+
+```powershell
+npm.cmd run build:windows
+```
+
+The standalone executable is written to `src-tauri/target/release/desktop-pet.exe`.
+The installable `.exe` is written to
+`src-tauri/target/release/bundle/nsis/desktop-pet_0.1.0_x64-setup.exe`.
+
 Stop the development runtime with `Ctrl+C` in its terminal.

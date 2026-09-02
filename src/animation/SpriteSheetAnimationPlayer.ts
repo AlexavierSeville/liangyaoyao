@@ -20,8 +20,9 @@ export class SpriteSheetAnimationPlayer extends Container {
   private elapsedMs = 0;
   private playing = false;
 
-  public constructor() {
+  public constructor(roundPixels: boolean) {
     super();
+    this.sprite.roundPixels = roundPixels;
     this.addChild(this.sprite);
   }
 

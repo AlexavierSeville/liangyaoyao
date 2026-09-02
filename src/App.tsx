@@ -36,6 +36,7 @@ function App() {
     let removeAnimationCompleteListener: (() => void) | null = null;
     let removeDragMoveListener: (() => void) | null = null;
     let removeDragEndListener: (() => void) | null = null;
+    let removeSizeChangeListener: (() => void) | null = null;
     let sizeConfig: Awaited<ReturnType<typeof loadBehaviorConfig>>["size"];
     let applySize: (percent: number) => Promise<void> = async () => undefined;
 
@@ -146,7 +147,7 @@ function App() {
         () => Date.now(),
         beginNativeDrag,
       );
-      if (import.meta.env.DEV) {
+      if (import.meta.env.DEV || runtimeConfig.animationTestKeys.enabled) {
         devAnimationTestController = new DevAnimationTestController(stateMachine);
         devAnimationTestController.start();
       }
@@ -174,6 +175,9 @@ function App() {
         pixiRuntime.resize(size.width, size.height, size.scale);
         setSizePercent(size.percent);
       };
+      removeSizeChangeListener = windowService.onSizeChange((percent) => {
+        void applySize(percent);
+      });
 
       behaviorScheduler = new LocalBehaviorScheduler(
         behaviorConfig.microActions,
@@ -206,6 +210,7 @@ function App() {
       removeAnimationCompleteListener?.();
       removeDragMoveListener?.();
       removeDragEndListener?.();
+      removeSizeChangeListener?.();
       windowService?.dispose();
       pixiRuntime?.dispose();
     };

@@ -27,6 +27,7 @@ export class PixiPetRuntime {
         backgroundAlpha: 0,
         antialias: true,
         autoDensity: true,
+        roundPixels: runtime.renderer.roundPixels,
         resolution: Math.min(
           window.devicePixelRatio || 1,
           runtime.renderer.resolutionCap,
@@ -34,7 +35,9 @@ export class PixiPetRuntime {
         preference: runtime.renderer.preference,
       });
 
-      const player = new SpriteSheetAnimationPlayer();
+      const player = new SpriteSheetAnimationPlayer(
+        runtime.renderer.roundPixels,
+      );
       player.position.set(character.sprite.x * scale, character.sprite.y * scale);
       player.scale.set(character.sprite.scale * scale);
       app.stage.addChild(player);

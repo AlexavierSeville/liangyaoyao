@@ -13,7 +13,7 @@ const bindings: Readonly<Record<string, string>> = {
   "0": "touch_belly_tickled",
 };
 
-/** Development-only keyboard bridge for requesting registry animations. */
+/** Configurable keyboard bridge for requesting animations during visual QA. */
 export class DevAnimationTestController {
   private started = false;
 
