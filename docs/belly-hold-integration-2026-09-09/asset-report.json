@@ -1,0 +1,118 @@
+{
+  "source": "approved candidate-v6-composite",
+  "sharedScale": 1.2857142857142858,
+  "neutralHeightLogical": 198,
+  "baselineLogical": 215,
+  "headCenterLogical": 159,
+  "frames": [
+    {
+      "frame": 1,
+      "bounds2x": [
+        178,
+        34,
+        461,
+        430
+      ]
+    },
+    {
+      "frame": 2,
+      "bounds2x": [
+        177,
+        33,
+        461,
+        430
+      ]
+    },
+    {
+      "frame": 3,
+      "bounds2x": [
+        173,
+        33,
+        455,
+        430
+      ]
+    },
+    {
+      "frame": 4,
+      "bounds2x": [
+        170,
+        26,
+        446,
+        430
+      ]
+    },
+    {
+      "frame": 5,
+      "bounds2x": [
+        176,
+        26,
+        451,
+        430
+      ]
+    },
+    {
+      "frame": 6,
+      "bounds2x": [
+        171,
+        33,
+        441,
+        430
+      ]
+    },
+    {
+      "frame": 7,
+      "bounds2x": [
+        171,
+        44,
+        462,
+        432
+      ]
+    },
+    {
+      "frame": 8,
+      "bounds2x": [
+        163,
+        38,
+        459,
+        433
+      ]
+    },
+    {
+      "frame": 9,
+      "bounds2x": [
+        157,
+        40,
+        453,
+        432
+      ]
+    },
+    {
+      "frame": 10,
+      "bounds2x": [
+        152,
+        39,
+        445,
+        432
+      ]
+    },
+    {
+      "frame": 11,
+      "bounds2x": [
+        157,
+        33,
+        453,
+        433
+      ]
+    },
+    {
+      "frame": 12,
+      "bounds2x": [
+        164,
+        35,
+        446,
+        432
+      ]
+    }
+  ],
+  "dislikeSource": "approved body-proportion candidate-v1"
+}
