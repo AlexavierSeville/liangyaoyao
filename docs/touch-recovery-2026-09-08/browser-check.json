@@ -1,0 +1,43 @@
+{
+  "cases": [
+    {
+      "clip": "touch_belly_dislike",
+      "triggered": true
+    },
+    {
+      "clip": "touch_flipper_react_screen_left",
+      "triggered": true
+    },
+    {
+      "clip": "touch_flipper_react_screen_right",
+      "triggered": true
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "messages": [
+    "[.WebGL-0x414c001b2000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x414c001b2000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x414c001b2000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+    "[.WebGL-0x414c001b2000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)",
+    "[animation-test] returned to idle_breathe",
+    "[interaction] touch_hold: belly",
+    "[interaction] accepted touch_belly_tickled",
+    "[interaction] scheduled belly hold reaction in 4596ms",
+    "[interaction] accepted touch_belly_dislike",
+    "[interaction] triggered long belly hold reaction: touch_belly_dislike",
+    "[interaction] ended touch_hold: belly",
+    "[animation-test] returned to idle_breathe",
+    "[interaction] touch_hold: flipper",
+    "[interaction] scheduled flipper hold reaction in 4587ms",
+    "[interaction] accepted touch_flipper_react_screen_left",
+    "[interaction] triggered long flipper hold reaction: touch_flipper_react_screen_left",
+    "[interaction] ended touch_hold: flipper",
+    "[animation-test] returned to idle_breathe",
+    "[interaction] touch_hold: flipper",
+    "[interaction] scheduled flipper hold reaction in 4587ms",
+    "[interaction] accepted touch_flipper_react_screen_right",
+    "[interaction] triggered long flipper hold reaction: touch_flipper_react_screen_right",
+    "[interaction] ended touch_hold: flipper"
+  ]
+}

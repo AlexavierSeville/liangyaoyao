@@ -1,0 +1,404 @@
+{
+  "framesChecked": 36,
+  "clippedFrames": 0,
+  "framesWithHolesOver16Pixels": [],
+  "review": "candidate only; user approval required before runtime replacement",
+  "frames": [
+    {
+      "frame": "touch_belly_dislike\\frame_01@2x.png",
+      "bounds": [
+        184,
+        34,
+        513,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_02@2x.png",
+      "bounds": [
+        192,
+        30,
+        458,
+        431
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 7
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_03@2x.png",
+      "bounds": [
+        157,
+        42,
+        481,
+        432
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 1
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_04@2x.png",
+      "bounds": [
+        186,
+        33,
+        513,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_05@2x.png",
+      "bounds": [
+        169,
+        33,
+        540,
+        433
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_06@2x.png",
+      "bounds": [
+        158,
+        45,
+        501,
+        434
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_07@2x.png",
+      "bounds": [
+        179,
+        35,
+        485,
+        439
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_08@2x.png",
+      "bounds": [
+        163,
+        35,
+        514,
+        429
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_09@2x.png",
+      "bounds": [
+        189,
+        38,
+        548,
+        429
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 2
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_10@2x.png",
+      "bounds": [
+        167,
+        29,
+        517,
+        428
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 1
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_11@2x.png",
+      "bounds": [
+        176,
+        44,
+        537,
+        429
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_belly_dislike\\frame_12@2x.png",
+      "bounds": [
+        188,
+        31,
+        448,
+        433
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_01@2x.png",
+      "bounds": [
+        68,
+        34,
+        445,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_02@2x.png",
+      "bounds": [
+        78,
+        32,
+        406,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_03@2x.png",
+      "bounds": [
+        22,
+        26,
+        432,
+        433
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 1
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_04@2x.png",
+      "bounds": [
+        50,
+        24,
+        419,
+        432
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_05@2x.png",
+      "bounds": [
+        60,
+        30,
+        441,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_06@2x.png",
+      "bounds": [
+        53,
+        38,
+        438,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_07@2x.png",
+      "bounds": [
+        51,
+        33,
+        439,
+        423
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_08@2x.png",
+      "bounds": [
+        35,
+        32,
+        404,
+        422
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_09@2x.png",
+      "bounds": [
+        139,
+        22,
+        418,
+        427
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 1
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_10@2x.png",
+      "bounds": [
+        145,
+        20,
+        423,
+        427
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 1
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_11@2x.png",
+      "bounds": [
+        144,
+        20,
+        416,
+        427
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_left\\frame_12@2x.png",
+      "bounds": [
+        149,
+        20,
+        416,
+        427
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_01@2x.png",
+      "bounds": [
+        182,
+        34,
+        553,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_02@2x.png",
+      "bounds": [
+        182,
+        34,
+        522,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 1
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_03@2x.png",
+      "bounds": [
+        179,
+        35,
+        528,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_04@2x.png",
+      "bounds": [
+        178,
+        35,
+        527,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 1
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_05@2x.png",
+      "bounds": [
+        178,
+        35,
+        528,
+        429
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_06@2x.png",
+      "bounds": [
+        199,
+        36,
+        528,
+        429
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 1
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_07@2x.png",
+      "bounds": [
+        180,
+        35,
+        529,
+        429
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_08@2x.png",
+      "bounds": [
+        181,
+        36,
+        528,
+        430
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_09@2x.png",
+      "bounds": [
+        192,
+        35,
+        455,
+        427
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_10@2x.png",
+      "bounds": [
+        188,
+        35,
+        450,
+        427
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_11@2x.png",
+      "bounds": [
+        177,
+        35,
+        426,
+        427
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    },
+    {
+      "frame": "touch_flipper_react_screen_right\\frame_12@2x.png",
+      "bounds": [
+        182,
+        34,
+        438,
+        427
+      ],
+      "clipped": false,
+      "largestTransparentHoleArea": 0
+    }
+  ]
+}

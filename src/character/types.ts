@@ -11,5 +11,9 @@ export interface CharacterConfig {
     y: number;
     scale: number;
   };
+  interactionCanvas?: {
+    width: number;
+    height: number;
+  };
   defaultAnimation: string;
 }

@@ -13,6 +13,9 @@ interface LoadedAnimation {
 /** Plays any configured row in a sprite sheet without knowing the character's actions. */
 export class SpriteSheetAnimationPlayer extends Container {
   private readonly sprite = new Sprite();
+  private readonly outgoing = new Sprite();
+  private transitionElapsedMs = 0;
+  private transitionDurationMs = 0;
   private readonly loadedAnimations = new Map<string, LoadedAnimation>();
   private readonly completionListeners = new Set<AnimationCompletionListener>();
   private current: LoadedAnimation | null = null;
@@ -23,10 +26,23 @@ export class SpriteSheetAnimationPlayer extends Container {
   public constructor(roundPixels: boolean) {
     super();
     this.sprite.roundPixels = roundPixels;
+    this.outgoing.roundPixels = roundPixels;
+    this.outgoing.visible = false;
+    this.addChild(this.outgoing);
     this.addChild(this.sprite);
   }
 
   public async load(config: AnimationConfig): Promise<void> {
+    if (!Number.isInteger(config.frames) || config.frames < 1 ||
+        !Number.isFinite(config.fps) || config.fps <= 0) {
+      throw new Error(`Invalid animation configuration: ${config.id}`);
+    }
+    if (config.frameDurationsMs && (
+      config.frameDurationsMs.length !== config.frames ||
+      config.frameDurationsMs.some((duration) => !Number.isFinite(duration) || duration <= 0)
+    )) {
+      throw new Error(`Invalid frame durations: ${config.id}`);
+    }
     if (config.sourceType === "sprite") {
       if (!config.files || config.files.length !== config.frames) {
         throw new Error(`Sprite frame list does not match frame count: ${config.id}`);
@@ -78,6 +94,20 @@ export class SpriteSheetAnimationPlayer extends Container {
       throw new Error(`Animation is not loaded: ${animationId}`);
     }
 
+    const transitionMs = animation.config.transitionMs ?? this.current?.config.transitionMs ?? 0;
+    if (this.current && transitionMs > 0) {
+      this.outgoing.texture = this.sprite.texture;
+      this.outgoing.anchor.copyFrom(this.sprite.anchor);
+      this.outgoing.alpha = 1;
+      this.outgoing.visible = true;
+      this.transitionDurationMs = transitionMs;
+      this.transitionElapsedMs = 0;
+      this.sprite.alpha = 0;
+    } else {
+      this.outgoing.visible = false;
+      this.transitionDurationMs = 0;
+      this.sprite.alpha = 1;
+    }
     this.current = animation;
     this.currentFrame = 0;
     this.elapsedMs = 0;
@@ -99,14 +129,28 @@ export class SpriteSheetAnimationPlayer extends Container {
   }
 
   public update(deltaMs: number): void {
+    if (this.transitionDurationMs > 0) {
+      this.transitionElapsedMs += Math.max(0, deltaMs);
+      const progress = Math.min(1, this.transitionElapsedMs / this.transitionDurationMs);
+      this.sprite.alpha = progress;
+      this.outgoing.alpha = 1 - progress;
+      if (progress === 1) {
+        this.outgoing.visible = false;
+        this.transitionDurationMs = 0;
+      }
+    }
     if (!this.playing || !this.current) {
       return;
     }
 
-    const frameDuration = 1000 / this.current.config.fps;
     this.elapsedMs += Math.max(0, deltaMs);
 
-    while (this.elapsedMs >= frameDuration && this.playing) {
+    while (this.playing && this.current) {
+      const frameDuration = this.current.config.frameDurationsMs?.[this.currentFrame]
+        ?? 1000 / this.current.config.fps;
+      if (this.elapsedMs < frameDuration) {
+        break;
+      }
       this.elapsedMs -= frameDuration;
       const nextFrame = this.currentFrame + 1;
 

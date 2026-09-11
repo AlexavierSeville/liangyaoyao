@@ -14,7 +14,9 @@ export interface AnimationConfig {
   frameWidth: number;
   frameHeight: number;
   fps: number;
+  frameDurationsMs?: number[];
   loop: boolean;
+  transitionMs?: number;
   sheetRow: number;
   sheetColumns?: number;
   startFrame?: number;

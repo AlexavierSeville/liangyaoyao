@@ -4,11 +4,13 @@ import {
   selectLongHoldReaction,
 } from "./longHoldReactions";
 import hitZones from "../config/pet-hit-zones.json";
+import characterConfig from "../config/character.json";
 
 const DRAG_THRESHOLD_PX = 5;
-const MULTI_CLICK_WINDOW_MS = 2000;
 const LONG_HOLD_MIN_DELAY_MS = 9000;
 const LONG_HOLD_MAX_DELAY_MS = 13000;
+const BODY_LONG_HOLD_MIN_DELAY_MS = 5000;
+const BODY_LONG_HOLD_MAX_DELAY_MS = 10000;
 
 interface PointerSession {
   pointerId: number;
@@ -17,6 +19,8 @@ interface PointerSession {
   currentX: number;
   currentY: number;
   hitZone: HitRegion;
+  flipperSide: "screen_left" | "screen_right";
+  startedAt: number;
   isDragging: boolean;
   isHolding: boolean;
   holdTimer: ReturnType<typeof setTimeout> | null;
@@ -43,7 +47,6 @@ const zones = hitZones as Record<Exclude<HitRegion, "unknown">, HitZone>;
 /** Separates click gestures from the existing native drag event chain. */
 export class PetInteractionController {
   private pointer: PointerSession | null = null;
-  private bellyClickTimes: number[] = [];
   private removeDragMoveListener: (() => void) | null = null;
   private removeDragEndListener: (() => void) | null = null;
   private started = false;
@@ -89,7 +92,6 @@ export class PetInteractionController {
     this.removeDragMoveListener = null;
     this.removeDragEndListener = null;
     this.clearPointer();
-    this.bellyClickTimes = [];
   }
 
   private readonly handlePointerDown = (event: PointerEvent): void => {
@@ -101,6 +103,8 @@ export class PetInteractionController {
       return;
     }
 
+    this.clearPointer();
+    const rect = this.stageElement.getBoundingClientRect();
     this.pointer = {
       pointerId: event.pointerId,
       startX: event.clientX,
@@ -108,6 +112,9 @@ export class PetInteractionController {
       currentX: event.clientX,
       currentY: event.clientY,
       hitZone: this.resolveRegion(event.clientX, event.clientY),
+      flipperSide: event.clientX < rect.left + rect.width / 2
+        ? "screen_left" : "screen_right",
+      startedAt: this.now(),
       isDragging: false,
       isHolding: false,
       holdTimer: null,
@@ -158,13 +165,11 @@ export class PetInteractionController {
 
     if (pointer.isDragging || this.windowService.isDragging) {
       this.clearPointer();
-      this.bellyClickTimes = [];
       return;
     }
     if (pointer.travelDistance > DRAG_THRESHOLD_PX) {
       pointer.cancelled = true;
       this.clearPointer();
-      this.bellyClickTimes = [];
       return;
     }
     if (pointer.isHolding) {
@@ -173,7 +178,6 @@ export class PetInteractionController {
         this.requestTouch("touch_head_pat_end");
       }
       this.clearPointer();
-      this.bellyClickTimes = [];
       return;
     }
     this.clearPointer();
@@ -194,12 +198,10 @@ export class PetInteractionController {
       }
       this.clearPointer();
     }
-    this.bellyClickTimes = [];
   };
 
   private readonly handleNativeDragEnd = (): void => {
     this.clearPointer();
-    this.bellyClickTimes = [];
   };
 
   private readonly handleHoldTimer = (pointerId: number): void => {
@@ -223,17 +225,28 @@ export class PetInteractionController {
         this.scheduleLongHoldReaction(pointer);
       }
     }
+    // Body impatience is timed from pointer down, independently of the loop.
+    if (pointer.hitZone === "belly" || pointer.hitZone === "flipper") {
+      this.scheduleLongHoldReaction(pointer);
+    }
   };
 
   private scheduleLongHoldReaction(pointer: PointerSession): void {
-    const delayRange = LONG_HOLD_MAX_DELAY_MS - LONG_HOLD_MIN_DELAY_MS;
-    const delay = LONG_HOLD_MIN_DELAY_MS + Math.floor(this.random() * delayRange);
+    const isBody = pointer.hitZone === "belly" || pointer.hitZone === "flipper";
+    const minimum = isBody ? BODY_LONG_HOLD_MIN_DELAY_MS : LONG_HOLD_MIN_DELAY_MS;
+    const maximum = isBody ? BODY_LONG_HOLD_MAX_DELAY_MS : LONG_HOLD_MAX_DELAY_MS;
+    const sample = this.random();
+    const normalized = Number.isFinite(sample) ? Math.min(1, Math.max(0, sample)) : 0;
+    const targetDelay = minimum + Math.floor(normalized * (maximum - minimum));
+    const delay = isBody
+      ? Math.max(0, targetDelay - (this.now() - pointer.startedAt))
+      : targetDelay;
     const pointerId = pointer.pointerId;
     pointer.longHoldTimer = setTimeout(
       () => this.handleLongHoldReaction(pointerId),
       delay,
     );
-    console.debug(`[interaction] scheduled head hold reaction in ${delay}ms`);
+    console.debug(`[interaction] scheduled ${pointer.hitZone} hold reaction in ${delay}ms`);
   }
 
   private handleLongHoldReaction(pointerId: number): void {
@@ -244,16 +257,25 @@ export class PetInteractionController {
       pointer.cancelled ||
       pointer.isDragging ||
       !pointer.isHolding ||
-      pointer.hitZone !== "head" ||
+      pointer.holdReactionTriggered ||
       this.windowService.isDragging
     ) {
       return;
     }
     pointer.longHoldTimer = null;
-    const registryId = selectLongHoldReaction(this.random());
+    const registryId = pointer.hitZone === "head"
+      ? selectLongHoldReaction(this.random())
+      : pointer.hitZone === "belly"
+        ? "touch_belly_dislike"
+        : pointer.hitZone === "flipper"
+          ? `touch_flipper_react_${pointer.flipperSide}`
+          : null;
+    if (!registryId) {
+      return;
+    }
     if (this.requestTouch(registryId)) {
       pointer.holdReactionTriggered = true;
-      console.debug(`[interaction] triggered long head hold reaction: ${registryId}`);
+      console.debug(`[interaction] triggered long ${pointer.hitZone} hold reaction: ${registryId}`);
     }
   }
 
@@ -282,7 +304,7 @@ export class PetInteractionController {
     pointer.isDragging = true;
     pointer.cancelled = true;
     this.clearPointerTimers(pointer);
-    this.bellyClickTimes = [];
+    this.endBodyHold();
     this.beginNativeDrag();
     console.debug("[interaction] drag threshold crossed");
   }
@@ -292,9 +314,9 @@ export class PetInteractionController {
       case "head":
         return "touch_head_pat_start";
       case "belly":
-        return "touch_belly_tickled";
+        return "touch_belly_rub_loop";
       case "flipper":
-        return "touch_flipper_react";
+        return this.pointer ? `touch_flipper_hold_${this.pointer.flipperSide}` : null;
       case "feet":
         return "touch_feet_react";
       default:
@@ -305,32 +327,19 @@ export class PetInteractionController {
   private handleValidClick(clientX: number, clientY: number): void {
     const region = this.resolveRegion(clientX, clientY);
     if (region === "unknown") {
-      this.bellyClickTimes = [];
       console.debug("[interaction] ignored click: unknown region");
       return;
     }
 
-    if (region !== "belly") {
-      this.bellyClickTimes = [];
-      this.requestTouch({
-        head: "touch_head_pat",
-        flipper: "touch_flipper_react",
-        feet: "touch_feet_react",
-      }[region]);
-      return;
+    const registryId = {
+      head: "touch_head_pat",
+      belly: "touch_belly_tickled",
+      flipper: null,
+      feet: "touch_feet_react",
+    }[region];
+    if (registryId) {
+      this.requestTouch(registryId);
     }
-
-    const timestamp = this.now();
-    this.bellyClickTimes = this.bellyClickTimes.filter(
-      (clickTime) => timestamp - clickTime <= MULTI_CLICK_WINDOW_MS,
-    );
-    this.bellyClickTimes.push(timestamp);
-    if (this.bellyClickTimes.length >= 2) {
-      this.bellyClickTimes = [];
-      this.requestTouch("touch_belly_dislike");
-      return;
-    }
-    this.requestTouch("touch_belly_tickled");
   }
 
   private resolveRegion(clientX: number, clientY: number): HitRegion {
@@ -338,8 +347,13 @@ export class PetInteractionController {
     if (rect.width <= 0 || rect.height <= 0) {
       return "unknown";
     }
-    const x = (clientX - rect.left) / rect.width;
-    const y = (clientY - rect.top) / rect.height;
+    // Transparent rendering gutters accommodate hands without changing the
+    // body's size or stretching its established head/belly/flipper hit zones.
+    const interaction = characterConfig.interactionCanvas;
+    const interactionWidth = rect.width * interaction.width / characterConfig.canvas.width;
+    const interactionHeight = rect.height * interaction.height / characterConfig.canvas.height;
+    const x = (clientX - rect.left - (rect.width - interactionWidth) / 2) / interactionWidth;
+    const y = (clientY - rect.top - (rect.height - interactionHeight) / 2) / interactionHeight;
     if (x < 0 || x > 1 || y < 0 || y > 1) {
       return "unknown";
     }
@@ -383,8 +397,18 @@ export class PetInteractionController {
   private clearPointer(): void {
     if (this.pointer) {
       this.clearPointerTimers(this.pointer);
+      this.endBodyHold();
     }
     this.pointer = null;
+  }
+
+  private endBodyHold(): void {
+    if (
+      (this.pointer?.hitZone === "belly" && this.stateMachine.currentAction === "BellyRub") ||
+      (this.pointer?.hitZone === "flipper" && this.stateMachine.currentAction === "FlipperHold")
+    ) {
+      this.stateMachine.returnToIdle();
+    }
   }
 
   private clearPointerTimers(pointer: PointerSession): void {

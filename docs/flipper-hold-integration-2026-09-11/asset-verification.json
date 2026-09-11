@@ -1,0 +1,39 @@
+{
+  "clips": [
+    {
+      "clip": "touch_flipper_hold_screen_left",
+      "frames": 16,
+      "durationMs": 4250,
+      "clippedFrames": 0
+    },
+    {
+      "clip": "touch_flipper_react_screen_left",
+      "frames": 12,
+      "durationMs": 2040,
+      "clippedFrames": 0
+    },
+    {
+      "clip": "touch_flipper_hold_screen_right",
+      "frames": 16,
+      "durationMs": 4250,
+      "clippedFrames": 0
+    },
+    {
+      "clip": "touch_flipper_react_screen_right",
+      "frames": 12,
+      "durationMs": 2040,
+      "clippedFrames": 0
+    }
+  ],
+  "totalFrames": 56,
+  "logicalBodyHeight": 198,
+  "logicalBaseline": 215,
+  "bodyHitArea": [
+    220,
+    228
+  ],
+  "renderCanvas": [
+    368,
+    228
+  ]
+}

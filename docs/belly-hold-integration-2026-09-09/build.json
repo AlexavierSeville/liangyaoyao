@@ -1,0 +1,7 @@
+{
+  "executable": "E:\\pet\\desktop-pet\\desktop-pet.exe",
+  "sha256": "6337bf37c0e1f3e390bbcdaf5b82d892684fa5774655b409a87f140ad5824318",
+  "backup": "E:\\pet\\desktop-pet\\docs\\belly-hold-integration-2026-09-09\\backup\\desktop-pet-before-belly-hold.exe",
+  "build": "tauri build --no-bundle",
+  "status": "passed"
+}

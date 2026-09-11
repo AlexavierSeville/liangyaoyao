@@ -1,0 +1,14 @@
+{
+  "left": {
+    "trimSeconds": 15.9,
+    "durationSeconds": 13.9,
+    "source": "left-flipper-runtime.webm",
+    "gifFps": 10
+  },
+  "right": {
+    "trimSeconds": 2.1,
+    "durationSeconds": 13.8,
+    "source": "right-flipper-runtime.webm",
+    "gifFps": 10
+  }
+}

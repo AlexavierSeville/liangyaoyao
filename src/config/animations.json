@@ -30,7 +30,10 @@
       "loop": true,
       "sheetRow": 0,
       "sheetColumns": 8,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "idle_blink": {
       "id": "idle_blink",
@@ -43,7 +46,10 @@
       "loop": false,
       "sheetRow": 0,
       "sheetColumns": 4,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "emote_tilt_head": {
       "id": "emote_tilt_head",
@@ -56,7 +62,10 @@
       "loop": false,
       "sheetRow": 0,
       "sheetColumns": 4,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "emote_puff_angry": {
       "id": "emote_puff_angry",
@@ -69,7 +78,10 @@
       "loop": false,
       "sheetRow": 0,
       "sheetColumns": 6,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "touch_belly_tickled": {
       "id": "touch_belly_tickled",
@@ -115,7 +127,10 @@
       "sheetRow": 0,
       "sheetColumns": 8,
       "startFrame": 0,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "touch_head_pat_start": {
       "id": "touch_head_pat_start",
@@ -128,7 +143,10 @@
       "loop": false,
       "sheetRow": 0,
       "sheetColumns": 6,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "touch_head_pat_loop": {
       "id": "touch_head_pat_loop",
@@ -141,7 +159,10 @@
       "loop": true,
       "sheetRow": 0,
       "sheetColumns": 12,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "touch_head_pat_end": {
       "id": "touch_head_pat_end",
@@ -154,7 +175,10 @@
       "loop": false,
       "sheetRow": 0,
       "sheetColumns": 6,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "touch_head_pat_push_away": {
       "id": "touch_head_pat_push_away",
@@ -239,7 +263,10 @@
       "loop": true,
       "sheetRow": 1,
       "sheetColumns": 8,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "walking-left": {
       "id": "walking-left",
@@ -252,7 +279,10 @@
       "loop": true,
       "sheetRow": 2,
       "sheetColumns": 8,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "walking-up": {
       "id": "walking-up",
@@ -265,7 +295,10 @@
       "loop": true,
       "sheetRow": 7,
       "sheetColumns": 8,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "walking-down": {
       "id": "walking-down",
@@ -278,7 +311,10 @@
       "loop": true,
       "sheetRow": 7,
       "sheetColumns": 8,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "hover-jump": {
       "id": "hover-jump",
@@ -291,7 +327,10 @@
       "loop": false,
       "sheetRow": 4,
       "sheetColumns": 8,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "waiting": {
       "id": "waiting",
@@ -304,7 +343,10 @@
       "loop": false,
       "sheetRow": 6,
       "sheetColumns": 8,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "review": {
       "id": "review",
@@ -317,7 +359,10 @@
       "loop": false,
       "sheetRow": 8,
       "sheetColumns": 8,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
     },
     "wave": {
       "id": "wave",
@@ -330,7 +375,299 @@
       "loop": false,
       "sheetRow": 3,
       "sheetColumns": 8,
-      "anchor": { "x": 0.5, "y": 1 }
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "touch_belly_dislike": {
+      "id": "touch_belly_dislike",
+      "sourceType": "sprite",
+      "files": [
+        "/assets/animations/hd/touch_belly_dislike/frame_01@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_02@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_03@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_04@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_05@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_06@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_07@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_08@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_09@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_10@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_11@2x.webp",
+        "/assets/animations/hd/touch_belly_dislike/frame_12@2x.webp"
+      ],
+      "frames": 12,
+      "frameWidth": 320,
+      "frameHeight": 228,
+      "fps": 8,
+      "loop": false,
+      "sheetRow": 0,
+      "anchor": {
+        "x": 0.5,
+        "y": 0.9649122807017544
+      },
+      "transitionMs": 160
+    },
+    "touch_flipper_react_screen_left": {
+      "id": "touch_flipper_react_screen_left",
+      "sourceType": "sprite",
+      "files": [
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_01@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_02@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_03@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_04@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_05@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_06@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_07@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_08@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_09@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_10@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_11@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_left/frame_12@2x.webp"
+      ],
+      "frames": 12,
+      "frameWidth": 368,
+      "frameHeight": 228,
+      "fps": 5.882352941176471,
+      "frameDurationsMs": [
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170
+      ],
+      "loop": false,
+      "sheetRow": 0,
+      "anchor": {
+        "x": 0.5,
+        "y": 0.9649122807017544
+      },
+      "transitionMs": 160
+    },
+    "touch_flipper_react_screen_right": {
+      "id": "touch_flipper_react_screen_right",
+      "sourceType": "sprite",
+      "files": [
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_01@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_02@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_03@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_04@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_05@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_06@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_07@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_08@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_09@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_10@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_11@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_12@2x.webp"
+      ],
+      "frames": 12,
+      "frameWidth": 368,
+      "frameHeight": 228,
+      "fps": 5.882352941176471,
+      "frameDurationsMs": [
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170
+      ],
+      "loop": false,
+      "sheetRow": 0,
+      "anchor": {
+        "x": 0.5,
+        "y": 0.9649122807017544
+      },
+      "transitionMs": 160
+    },
+    "touch_flipper_react": {
+      "id": "touch_flipper_react",
+      "sourceType": "sprite",
+      "files": [
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_01@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_02@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_03@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_04@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_05@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_06@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_07@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_08@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_09@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_10@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_11@2x.webp",
+        "/assets/animations/hd/touch_flipper_react_screen_right/frame_12@2x.webp"
+      ],
+      "frames": 12,
+      "frameWidth": 368,
+      "frameHeight": 228,
+      "fps": 5.882352941176471,
+      "frameDurationsMs": [
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170,
+        170
+      ],
+      "loop": false,
+      "sheetRow": 0,
+      "anchor": {
+        "x": 0.5,
+        "y": 0.9649122807017544
+      },
+      "transitionMs": 160
+    },
+    "touch_belly_rub_loop": {
+      "id": "touch_belly_rub_loop",
+      "sourceType": "sprite",
+      "files": [
+        "/assets/animations/hd/touch_belly_rub_loop/frame_01@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_02@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_03@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_04@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_05@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_06@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_07@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_08@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_09@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_10@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_11@2x.webp",
+        "/assets/animations/hd/touch_belly_rub_loop/frame_12@2x.webp"
+      ],
+      "frames": 12,
+      "frameWidth": 320,
+      "frameHeight": 228,
+      "fps": 7.142857142857143,
+      "loop": true,
+      "sheetRow": 0,
+      "anchor": {
+        "x": 0.5,
+        "y": 0.9649122807017544
+      },
+      "transitionMs": 160
+    },
+    "touch_flipper_hold_screen_left": {
+      "id": "touch_flipper_hold_screen_left",
+      "sourceType": "sprite",
+      "files": [
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_01@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_02@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_03@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_04@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_05@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_06@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_07@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_08@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_09@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_10@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_11@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_12@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_13@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_14@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_15@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_left/frame_16@2x.webp"
+      ],
+      "frames": 16,
+      "frameWidth": 368,
+      "frameHeight": 228,
+      "fps": 3.764705882352941,
+      "frameDurationsMs": [
+        290,
+        240,
+        210,
+        340,
+        240,
+        290,
+        240,
+        260,
+        240,
+        240,
+        290,
+        240,
+        240,
+        290,
+        260,
+        340
+      ],
+      "loop": true,
+      "sheetRow": 0,
+      "anchor": {
+        "x": 0.5,
+        "y": 0.9649122807017544
+      },
+      "transitionMs": 160
+    },
+    "touch_flipper_hold_screen_right": {
+      "id": "touch_flipper_hold_screen_right",
+      "sourceType": "sprite",
+      "files": [
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_01@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_02@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_03@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_04@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_05@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_06@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_07@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_08@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_09@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_10@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_11@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_12@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_13@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_14@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_15@2x.webp",
+        "/assets/animations/hd/touch_flipper_hold_screen_right/frame_16@2x.webp"
+      ],
+      "frames": 16,
+      "frameWidth": 368,
+      "frameHeight": 228,
+      "fps": 3.764705882352941,
+      "frameDurationsMs": [
+        290,
+        240,
+        210,
+        340,
+        240,
+        290,
+        240,
+        260,
+        240,
+        240,
+        290,
+        240,
+        240,
+        290,
+        260,
+        340
+      ],
+      "loop": true,
+      "sheetRow": 0,
+      "anchor": {
+        "x": 0.5,
+        "y": 0.9649122807017544
+      },
+      "transitionMs": 160
     }
   }
 }

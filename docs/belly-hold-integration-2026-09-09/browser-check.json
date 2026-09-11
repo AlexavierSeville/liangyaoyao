@@ -1,0 +1,32 @@
+{
+  "reactionMs": 6634,
+  "randomSample": 0.32,
+  "events": [
+    {
+      "ms": 419,
+      "message": "[interaction] touch_hold: belly"
+    },
+    {
+      "ms": 421,
+      "message": "[interaction] accepted touch_belly_rub_loop"
+    },
+    {
+      "ms": 425,
+      "message": "[interaction] scheduled belly hold reaction in 6197ms"
+    },
+    {
+      "ms": 6634,
+      "message": "[interaction] accepted touch_belly_dislike"
+    },
+    {
+      "ms": 6636,
+      "message": "[interaction] triggered long belly hold reaction: touch_belly_dislike"
+    },
+    {
+      "ms": 8777,
+      "message": "[interaction] ended touch_hold: belly"
+    }
+  ],
+  "errors": [],
+  "failedRequests": []
+}

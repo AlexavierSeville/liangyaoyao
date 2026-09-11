@@ -1,0 +1,64 @@
+{
+  "left": {
+    "reactionMs": 8556,
+    "errors": [],
+    "failedRequests": [],
+    "events": [
+      {
+        "ms": 431,
+        "message": "[interaction] touch_hold: flipper"
+      },
+      {
+        "ms": 433,
+        "message": "[interaction] accepted touch_flipper_hold_screen_left"
+      },
+      {
+        "ms": 435,
+        "message": "[interaction] scheduled flipper hold reaction in 8093ms"
+      },
+      {
+        "ms": 8555,
+        "message": "[interaction] accepted touch_flipper_react_screen_left"
+      },
+      {
+        "ms": 8557,
+        "message": "[interaction] triggered long flipper hold reaction: touch_flipper_react_screen_left"
+      },
+      {
+        "ms": 9397,
+        "message": "[interaction] ended touch_hold: flipper"
+      }
+    ]
+  },
+  "right": {
+    "reactionMs": 8553,
+    "errors": [],
+    "failedRequests": [],
+    "events": [
+      {
+        "ms": 408,
+        "message": "[interaction] touch_hold: flipper"
+      },
+      {
+        "ms": 408,
+        "message": "[interaction] accepted touch_flipper_hold_screen_right"
+      },
+      {
+        "ms": 415,
+        "message": "[interaction] scheduled flipper hold reaction in 8097ms"
+      },
+      {
+        "ms": 8553,
+        "message": "[interaction] accepted touch_flipper_react_screen_right"
+      },
+      {
+        "ms": 8558,
+        "message": "[interaction] triggered long flipper hold reaction: touch_flipper_react_screen_right"
+      },
+      {
+        "ms": 9463,
+        "message": "[interaction] ended touch_hold: flipper"
+      }
+    ]
+  }
+}

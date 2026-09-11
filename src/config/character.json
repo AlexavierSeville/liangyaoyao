@@ -8,13 +8,17 @@
     "docs/references/liangyaoyao-persona-template-03.png"
   ],
   "canvas": {
-    "width": 220,
+    "width": 368,
     "height": 228
   },
   "sprite": {
-    "x": 110,
+    "x": 184,
     "y": 220,
     "scale": 1
+  },
+  "interactionCanvas": {
+    "width": 220,
+    "height": 228
   },
   "defaultAnimation": "idle"
 }

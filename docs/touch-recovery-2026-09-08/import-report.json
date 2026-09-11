@@ -1,0 +1,656 @@
+{
+  "method": "exterior-flood-fill, hatch-pet components, shared sequence scale",
+  "clips": {
+    "touch_belly_dislike": {
+      "archive": "touch_belly_dislike_1k_12frames.zip",
+      "sha256": "fd373b7fc2bbabdb929701d7b65a9f8df84cd7b3b7069be62f7b22aa388c89ce",
+      "frameCount": 12,
+      "scale": 0.5012658227848101,
+      "neutralBodyHeightLogical": 198.0,
+      "frameSize": [
+        640,
+        456
+      ],
+      "frames": [
+        {
+          "source": "touch_belly_dislike_01.png",
+          "bodyBoundsSource": [
+            217,
+            122,
+            783,
+            912
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            174,
+            34,
+            529,
+            430
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_02.png",
+          "bodyBoundsSource": [
+            253,
+            115,
+            815,
+            915
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 4,
+          "outputBounds": [
+            192,
+            30,
+            474,
+            431
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_03.png",
+          "bodyBoundsSource": [
+            169,
+            139,
+            717,
+            915
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 2,
+          "outputBounds": [
+            150,
+            43,
+            497,
+            432
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_04.png",
+          "bodyBoundsSource": [
+            241,
+            121,
+            756,
+            912
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            186,
+            33,
+            529,
+            430
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_05.png",
+          "bodyBoundsSource": [
+            206,
+            121,
+            795,
+            918
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 2,
+          "outputBounds": [
+            169,
+            33,
+            556,
+            433
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_06.png",
+          "bodyBoundsSource": [
+            185,
+            146,
+            733,
+            921
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 4,
+          "outputBounds": [
+            158,
+            46,
+            517,
+            434
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_07.png",
+          "bodyBoundsSource": [
+            226,
+            125,
+            722,
+            928
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            179,
+            36,
+            501,
+            439
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_08.png",
+          "bodyBoundsSource": [
+            194,
+            124,
+            724,
+            911
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 2,
+          "outputBounds": [
+            163,
+            35,
+            530,
+            429
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_09.png",
+          "bodyBoundsSource": [
+            237,
+            132,
+            769,
+            911
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 20,
+          "outputBounds": [
+            184,
+            39,
+            564,
+            429
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_10.png",
+          "bodyBoundsSource": [
+            190,
+            112,
+            933,
+            908
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 27,
+          "outputBounds": [
+            161,
+            29,
+            533,
+            428
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_11.png",
+          "bodyBoundsSource": [
+            216,
+            144,
+            702,
+            911
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 6,
+          "outputBounds": [
+            174,
+            45,
+            553,
+            429
+          ]
+        },
+        {
+          "source": "touch_belly_dislike_12.png",
+          "bodyBoundsSource": [
+            244,
+            116,
+            762,
+            917
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            188,
+            31,
+            448,
+            433
+          ]
+        }
+      ]
+    },
+    "touch_flipper_react_screen_right": {
+      "archive": "touch_flipper_react_1k_24frames.zip",
+      "sha256": "0ff2c598b9b369da6c094b18286962c450b7b15a437774352965b311cbb299a7",
+      "frameCount": 12,
+      "scale": 0.5089974293059126,
+      "neutralBodyHeightLogical": 198.0,
+      "frameSize": [
+        640,
+        456
+      ],
+      "frames": [
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_01.png",
+          "bodyBoundsSource": [
+            212,
+            115,
+            781,
+            893
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            173,
+            34,
+            569,
+            430
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_02.png",
+          "bodyBoundsSource": [
+            213,
+            115,
+            931,
+            893
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            173,
+            34,
+            538,
+            430
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_03.png",
+          "bodyBoundsSource": [
+            185,
+            116,
+            845,
+            892
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 4,
+          "outputBounds": [
+            159,
+            35,
+            544,
+            430
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_04.png",
+          "bodyBoundsSource": [
+            184,
+            116,
+            841,
+            892
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            158,
+            35,
+            543,
+            430
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_05.png",
+          "bodyBoundsSource": [
+            183,
+            119,
+            830,
+            891
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            158,
+            36,
+            544,
+            429
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_06.png",
+          "bodyBoundsSource": [
+            230,
+            121,
+            806,
+            891
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            182,
+            37,
+            544,
+            429
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_07.png",
+          "bodyBoundsSource": [
+            218,
+            119,
+            752,
+            892
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            176,
+            36,
+            545,
+            429
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_08.png",
+          "bodyBoundsSource": [
+            217,
+            120,
+            749,
+            892
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            175,
+            37,
+            544,
+            430
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_09.png",
+          "bodyBoundsSource": [
+            246,
+            117,
+            770,
+            887
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 4,
+          "outputBounds": [
+            190,
+            35,
+            457,
+            427
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_10.png",
+          "bodyBoundsSource": [
+            236,
+            117,
+            761,
+            887
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 2,
+          "outputBounds": [
+            185,
+            35,
+            452,
+            427
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_11.png",
+          "bodyBoundsSource": [
+            221,
+            116,
+            733,
+            887
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            177,
+            35,
+            438,
+            427
+          ]
+        },
+        {
+          "source": "screen_right/touch_flipper_react_screen_right_12.png",
+          "bodyBoundsSource": [
+            214,
+            115,
+            743,
+            887
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            174,
+            34,
+            443,
+            427
+          ]
+        }
+      ]
+    },
+    "touch_flipper_react_screen_left": {
+      "archive": "touch_flipper_react_1k_24frames.zip",
+      "sha256": "0ff2c598b9b369da6c094b18286962c450b7b15a437774352965b311cbb299a7",
+      "frameCount": 12,
+      "scale": 0.5308310991957105,
+      "neutralBodyHeightLogical": 198.0,
+      "frameSize": [
+        640,
+        456
+      ],
+      "frames": [
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_01.png",
+          "bodyBoundsSource": [
+            333,
+            146,
+            881,
+            892
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            56,
+            34,
+            457,
+            430
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_02.png",
+          "bodyBoundsSource": [
+            149,
+            143,
+            803,
+            892
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            68,
+            32,
+            415,
+            430
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_03.png",
+          "bodyBoundsSource": [
+            238,
+            130,
+            867,
+            896
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 2,
+          "outputBounds": [
+            21,
+            26,
+            449,
+            433
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_04.png",
+          "bodyBoundsSource": [
+            217,
+            128,
+            839,
+            896
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            34,
+            24,
+            434,
+            432
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_05.png",
+          "bodyBoundsSource": [
+            274,
+            138,
+            885,
+            892
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            58,
+            30,
+            459,
+            430
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_06.png",
+          "bodyBoundsSource": [
+            310,
+            155,
+            879,
+            892
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 2,
+          "outputBounds": [
+            45,
+            39,
+            455,
+            430
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_07.png",
+          "bodyBoundsSource": [
+            317,
+            144,
+            860,
+            880
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            35,
+            33,
+            445,
+            424
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_08.png",
+          "bodyBoundsSource": [
+            286,
+            143,
+            789,
+            880
+          ],
+          "keptComponents": 2,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            19,
+            32,
+            408,
+            423
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_09.png",
+          "bodyBoundsSource": [
+            263,
+            124,
+            819,
+            887
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 4,
+          "outputBounds": [
+            129,
+            22,
+            424,
+            427
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_10.png",
+          "bodyBoundsSource": [
+            280,
+            120,
+            834,
+            887
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 4,
+          "outputBounds": [
+            138,
+            20,
+            432,
+            427
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_11.png",
+          "bodyBoundsSource": [
+            281,
+            120,
+            804,
+            887
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            138,
+            20,
+            416,
+            427
+          ]
+        },
+        {
+          "source": "screen_left/touch_flipper_react_screen_left_12.png",
+          "bodyBoundsSource": [
+            297,
+            120,
+            803,
+            887
+          ],
+          "keptComponents": 1,
+          "removedSmallComponents": 0,
+          "outputBounds": [
+            147,
+            20,
+            416,
+            427
+          ]
+        }
+      ]
+    }
+  }
+}

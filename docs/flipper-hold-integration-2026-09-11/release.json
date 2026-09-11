@@ -1,0 +1,15 @@
+{
+  "exe": "E:\\pet\\desktop-pet\\desktop-pet.exe",
+  "sha256": "de854850867efb009d176d032916f7ddfcc9c62798fc25e15208419bfb5b6034",
+  "sizeBytes": 29483520,
+  "backupSHA256": "6337bf37c0e1f3e390bbcdaf5b82d892684fa5774655b409a87f140ad5824318",
+  "build": "npm run tauri -- build --no-bundle",
+  "touchChecksPassed": 40,
+  "playerTimingChecksPassed": true,
+  "browserSidesPassed": [
+    "left",
+    "right"
+  ],
+  "nativeWindowRecording": false,
+  "formalArchiveSHA256": "831a96dba131e2cfecd9fc9f38b2f951d3c0591e237a1f5b96760edec65c1867"
+}

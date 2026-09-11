@@ -1,0 +1,47 @@
+{
+  "idleBodyBounds": [
+    85,
+    17,
+    234,
+    215
+  ],
+  "clips": {
+    "touch_belly_dislike": {
+      "neutralForegroundBounds": [
+        93,
+        17,
+        257,
+        215
+      ],
+      "neutralBodyHeight": 198,
+      "neutralHeadCenterX": 159.0,
+      "framesChecked": 12,
+      "clippedFrames": 0
+    },
+    "touch_flipper_react_screen_left": {
+      "neutralForegroundBounds": [
+        83,
+        17,
+        229,
+        215
+      ],
+      "neutralBodyHeight": 198,
+      "neutralHeadCenterX": 159.5,
+      "framesChecked": 12,
+      "clippedFrames": 0
+    },
+    "touch_flipper_react_screen_right": {
+      "neutralForegroundBounds": [
+        86,
+        17,
+        232,
+        215
+      ],
+      "neutralBodyHeight": 198,
+      "neutralHeadCenterX": 159.0,
+      "framesChecked": 12,
+      "clippedFrames": 0
+    }
+  },
+  "ok": true
+}

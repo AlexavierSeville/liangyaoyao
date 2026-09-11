@@ -1,0 +1,39 @@
+{
+  "method": "user-authorized local coordinate correction, hand-protected, premultiplied sampling",
+  "runtimeModified": false,
+  "clips": {
+    "touch_belly_dislike": {
+      "frames": 12,
+      "parameters": {
+        "head_scale": 0.91,
+        "belly_scale": 0.89,
+        "beak_y": 78,
+        "neck_y": 102,
+        "hand_dx": -8
+      },
+      "status": "candidate_pending_user_approval"
+    },
+    "touch_flipper_react_screen_left": {
+      "frames": 12,
+      "parameters": {
+        "head_scale": 0.85,
+        "belly_scale": 0.87,
+        "beak_y": 82.5,
+        "neck_y": 105,
+        "hand_dx": 8
+      },
+      "status": "candidate_pending_user_approval"
+    },
+    "touch_flipper_react_screen_right": {
+      "frames": 12,
+      "parameters": {
+        "head_scale": 0.87,
+        "belly_scale": 0.88,
+        "beak_y": 80,
+        "neck_y": 104,
+        "hand_dx": -8
+      },
+      "status": "candidate_pending_user_approval"
+    }
+  }
+}
