@@ -17,6 +17,12 @@ src-tauri/target
 output/
 scripts/__pycache__/
 
+# Local rollback copies and decoded recording frames; keep final QA media.
+docs/**/backup/
+docs/**/video/
+docs/**/video-frames/
+docs/**/*-video-frames/
+
 # Local analysis artifacts
 atlas-grid.jpg
 

@@ -11,6 +11,17 @@ and PixiJS.
 - reusable animation player with frame count, frame size, FPS, loop control,
   and completion listeners
 - registry-driven breathing Idle and random blink behavior
+- belly stroking and left/right flipper stroking with handshake loops
+- body impatience reactions after a continuous 5–10 second hold
+- per-frame timing, touch-loop cancellation, and priority-safe reactions
+
+The approved flipper artwork uses a shared palette and proportions. Handshake
+loops take 4.25 seconds; impatience takes 2.04 seconds. The 368×228 transparent
+canvas accommodates the hand while preserving the 220×228 body interaction area.
+
+See the [September 11 work summary](docs/work-summary-2026-09-11.md),
+[flipper runtime demo](docs/flipper-hold-integration-2026-09-11/demo.html), and
+[belly runtime demo](docs/belly-hold-integration-2026-09-09/demo.html).
 
 AI, dialogue, memory, plugins, outfit logic, databases, weather, Git, and IDE
 integration are intentionally not implemented in V0.1.
@@ -38,6 +49,8 @@ For the character identity reference, see
 cd E:\pet\desktop-pet
 npm.cmd install
 npm.cmd run build
+node scripts/test-touch-reactions.cjs
+node scripts/test-frame-durations.cjs
 npm.cmd run tauri dev
 ```
 

@@ -26,6 +26,8 @@ Generated directories are intentionally excluded from Git:
 - `node_modules/`: installed frontend dependencies
 - `dist/`: Vite production output
 - `src-tauri/target/`: Cargo build output
+- `output/`: generated candidates and local visual-source workflow
+- `docs/**/backup/` and recording-frame directories: local rollback and raw QA data
 
 ## Frontend source
 
@@ -46,7 +48,7 @@ src/
 ### Animation ownership
 
 - `src/config/animations.json` describes playable runtime clips: source files,
-  frame geometry, FPS, looping, and anchors.
+  frame geometry, FPS, optional `frameDurationsMs`, looping, transitions, and anchors.
 - `src/config/animation-registry.json` assigns semantic actions, status,
   priority, completion behavior, and `runtimeClipId` mappings.
 - `src/animation/SpriteSheetAnimationPlayer.ts` loads and advances frames.
@@ -63,6 +65,8 @@ assets are stored as `idle_breathe.webp` and `idle_blink.webp`.
 - `src/behavior/LocalBehaviorScheduler.ts` emits periodic Idle ticks.
 - `src/behavior/PetStateMachine.ts` owns state transitions, priorities,
   animation selection, completion rules, and drag interruption behavior.
+- `src/behavior/PetInteractionController.ts` resolves body hit regions and left/right
+  flippers, distinguishes clicks/holds/dragging, and cancels touch sessions.
 - `src/App.tsx` loads dependencies and forwards UI/native events; it does not
   choose actions.
 
